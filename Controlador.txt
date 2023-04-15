@@ -1,0 +1,211 @@
+// Definición de los pines del display de siete segmentos
+const int a = 2;
+const int b = 3;
+const int c = 4;
+const int d = 5;
+const int e = 6;
+const int f = 7;
+const int g = 8;
+
+const int SA = 9;
+const int SB = 10;
+const int SC =11;
+const int SD = 12;
+
+// Definición del pin de entrada para el número binario
+const int num_bin = 9;
+
+void setup() {
+  // Configuración de los pines del display de siete segmentos como salidas
+  pinMode(a, OUTPUT);
+  pinMode(b, OUTPUT);
+  pinMode(c, OUTPUT);
+  pinMode(d, OUTPUT);
+  pinMode(e, OUTPUT);
+  pinMode(f, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(SA, INPUT);
+  pinMode(SB, INPUT);
+  pinMode(SC, INPUT);
+  pinMode(SD, INPUT);
+
+  // Configuración del pin de entrada para el número binario como entrada
+  pinMode(num_bin, INPUT);
+}
+
+void loop() {
+  // Lectura del número binario
+  int BSA = digitalRead(SA);
+  int BSB = digitalRead(SB);
+  int BSC = digitalRead(SC);
+  int BSD = digitalRead(SD);
+
+  // Conversión del número binario a hexadecimal
+  // Numero 0
+  if((!BSA) && (!BSB) && (!BSC) && (!BSD)){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, LOW);
+  }
+  //Numero 1
+  if(!BSA&&!BSB&&!BSC&&BSD){
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+  }
+  //Numero 2
+   if(!BSA&&!BSB&&BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, LOW);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+}
+//Numero 3
+   if(!BSA&&!BSB&&BSC&&BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+}
+//Numero 4
+ if(!BSA&&BSB&&!BSC&&!BSD){
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+}
+//Numero 5
+ if(!BSA&&BSB&&!BSC&&BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+ }
+ //Numero 6     
+ if(!BSA&&BSB&&BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+
+}
+//Numero 7     
+ if(!BSA&&BSB&&BSC&&BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f, LOW);
+      digitalWrite(g, LOW);
+
+}
+//Numero 8
+ if(BSA&&!BSB&&!BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+}
+//Numero 9
+ if(BSA&&!BSB&&!BSC&&BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, LOW);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+ }
+ //Numero A(10)     
+ if(BSA&&!BSB&&BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, LOW);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+
+}
+//Numero B(11)     
+ if(BSA&&!BSB&&BSC&&BSD){
+      digitalWrite(a, LOW);
+      digitalWrite(b, LOW);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+
+}
+//Numero C(12)
+ if(BSA&&BSB&&!BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, LOW);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, LOW);
+ }
+ //Numero d(13)     
+ if(BSA&&BSB&&!BSC&&BSD){
+      digitalWrite(a, LOW);
+      digitalWrite(b, HIGH);
+      digitalWrite(c, HIGH);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, LOW);
+      digitalWrite(g, HIGH);
+
+}
+//Numero E(14)     
+ if(BSA&&BSB&&BSC&&!BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, LOW);
+      digitalWrite(d, HIGH);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g, HIGH);
+
+}
+//Numero F(15)     
+ if(BSA&&BSB&&BSC&&BSD){
+      digitalWrite(a, HIGH);
+      digitalWrite(b, LOW);
+      digitalWrite(c, LOW);
+      digitalWrite(d, LOW);
+      digitalWrite(e, HIGH);
+      digitalWrite(f, HIGH);
+      digitalWrite(g,HIGH);
+}
+     
+}
